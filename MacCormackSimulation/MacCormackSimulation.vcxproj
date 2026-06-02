@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a8e17141-1e10-498e-8066-8255fa45cc78}</ProjectGuid>
+    <RootNamespace>MacCormackSimulation</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SAVE_ETA_MAX_MAP;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SAVE_ETA_MAX_MAP;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <!-- /fp:fast: +14-19% (FMA fusion, reassociation). Regression bitwise
+           identical on tests 2,5 and within 2e-11 on test 3. -->
+      <!-- AVX2 tested + reverted: code is memory-bandwidth-bound, so wider
+           SIMD doesn't help and the AVX frequency throttle (-200 MHz) makes
+           it slightly slower than SSE2 default. -->
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalOptions>/openmp:experimental %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BoundaryCondition.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="ScenarioBuilder.cpp" />
+    <ClCompile Include="SingleLineGridSimulation.cpp" />
+    <ClCompile Include="DiskOffloadSimulator.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="FourNeighborSubGrid.cpp" />
+    <ClCompile Include="SubGrid.cpp" />
+    <ClCompile Include="ActiveRegionManager.cpp" />
+    <ClCompile Include="FVSolverConfig.cpp" />
+    <ClCompile Include="FVSolver.cpp" />
+    <!-- Hybrid Architecture Components -->
+    <ClCompile Include="StructuredPatch.cpp" />
+    <ClCompile Include="CouplingMap.cpp" />
+    <ClCompile Include="CouplingBuilder.cpp" />
+    <ClCompile Include="ExchangeEngine.cpp" />
+    <ClCompile Include="HybridDomain.cpp" />
+    <ClCompile Include="SimulationRunner.cpp" />
+    <ClCompile Include="HybridDomainBuilder.cpp" />
+    <ClCompile Include="MeshPatch.cpp" />
+    <ClCompile Include="RectSubGrid.cpp" />
+    <ClCompile Include="NestedStructuredPatch.cpp" />
+    <ClCompile Include="DiagnosticTools.cpp" />
+    <!-- DG Mesh Infrastructure (Phase 4) -->
+    <ClCompile Include="TriMesh.cpp" />
+    <ClCompile Include="MeshReader.cpp" />
+    <!-- DG Basis and Matrices (Phase 5) -->
+    <ClCompile Include="TaylorBasis.cpp" />
+    <ClCompile Include="ElementMatrices.cpp" />
+    <!-- DG Riemann Solver (Phase 6) -->
+    <ClCompile Include="RiemannSolver.cpp" />
+    <!-- DG Solver Assembly (Phase 7) -->
+    <ClCompile Include="BlockSparseMatrix.cpp" />
+    <ClCompile Include="DGSolver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ASCParser.h" />
+    <ClInclude Include="BaseSimulator.h" />
+    <ClInclude Include="BoundaryCondition.h" />
+    <ClInclude Include="CoordSystem.h" />
+    <ClInclude Include="DefaultParametersParser.h" />
+    <ClInclude Include="EllipsoidalSource.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="Precision.h" />
+    <ClInclude Include="IBaseBathymetryParser.h" />
+    <ClInclude Include="IBaseParametersParser.h" />
+    <ClInclude Include="ISource.h" />
+    <ClInclude Include="Sandbox.h" />
+    <ClInclude Include="ScenarioBuilder.h" />
+    <ClInclude Include="SingleLineGridSimulation.h" />
+    <ClInclude Include="DiskOffloadSimulator.h" />
+    <ClInclude Include="FourNeighborSubGrid.h" />
+    <ClInclude Include="SubGrid.h" />
+    <ClInclude Include="ActiveRegionManager.h" />
+    <ClInclude Include="FVTypes.h" />
+    <ClInclude Include="FVSolverConfig.h" />
+    <ClInclude Include="FVHydrostaticReconstruction.h" />
+    <ClInclude Include="FVFlux.h" />
+    <ClInclude Include="FVSolver.h" />
+    <ClInclude Include="ZDataParser.h" />
+    <!-- Hybrid Architecture Components -->
+    <ClInclude Include="PatchTypes.h" />
+    <ClInclude Include="IPatch.h" />
+    <ClInclude Include="StructuredPatch.h" />
+    <ClInclude Include="CouplingMap.h" />
+    <ClInclude Include="CouplingBuilder.h" />
+    <ClInclude Include="ExchangeEngine.h" />
+    <ClInclude Include="HybridDomain.h" />
+    <ClInclude Include="SimulationRunner.h" />
+    <ClInclude Include="HybridDomainBuilder.h" />
+    <ClInclude Include="MeshPatch.h" />
+    <ClInclude Include="RectSubGrid.h" />
+    <ClInclude Include="NestedStructuredPatch.h" />
+    <ClInclude Include="DiagnosticTools.h" />
+    <!-- DG Mesh Infrastructure (Phase 4) -->
+    <ClInclude Include="TriElement.h" />
+    <ClInclude Include="TriMesh.h" />
+    <ClInclude Include="MeshReader.h" />
+    <ClInclude Include="GaussQuadrature.h" />
+    <!-- DG Basis and Matrices (Phase 5) -->
+    <ClInclude Include="TaylorBasis.h" />
+    <ClInclude Include="ElementMatrices.h" />
+    <!-- DG Riemann Solver (Phase 6) -->
+    <ClInclude Include="RiemannSolver.h" />
+    <!-- DG Solver Assembly (Phase 7) -->
+    <ClInclude Include="BlockSparseMatrix.h" />
+    <ClInclude Include="DGSolver.h" />
+    <!-- DG Validation Tests (Phase 9) -->
+    <ClInclude Include="DGValidation.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

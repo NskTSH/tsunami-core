@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Base">
+      <UniqueIdentifier>{bce77611-c554-426a-834b-4f13a897443e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Simulator">
+      <UniqueIdentifier>{1e436434-6d80-4718-875f-2ddc3d02592e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsers">
+      <UniqueIdentifier>{283732e4-1a33-4aee-b37d-a32c66716618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Simulator">
+      <UniqueIdentifier>{55045714-386f-401b-9dc6-f6f34ef792eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsers">
+      <UniqueIdentifier>{b1057929-9d84-446d-b4a5-ebb981d763c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sources">
+      <UniqueIdentifier>{34ff5b3c-53fa-4129-b56c-1aa92e6b886b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SubGrid.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="ActiveRegionManager.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="FourNeighborSubGrid.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiLineGridSimulation.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleLineGridSimulation.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenarioBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundaryCondition.cpp">
+      <Filter>Source Files\Simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="CouplingBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CouplingMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DiagnosticTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HybridDomain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HybridDomainBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshPatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RectSubGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NestedStructuredPatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulationRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuredPatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseSimulator.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="FourNeighborSubGrid.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiLineGridSimulation.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleLineGridSimulation.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="SubGrid.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="ActiveRegionManager.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="IBaseBathymetryParser.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="ASCParser.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sandbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBaseParametersParser.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="ISource.h">
+      <Filter>Header Files\Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="EllipsoidalSource.h">
+      <Filter>Header Files\Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultParametersParser.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="ZDataParser.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundaryCondition.h">
+      <Filter>Header Files\Simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="CoordSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CouplingBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CouplingMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagnosticTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HybridDomain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HybridDomainBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshPatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RectSubGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NestedStructuredPatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatchTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationRunner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StructuredPatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

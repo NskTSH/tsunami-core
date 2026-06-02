@@ -1,0 +1,55 @@
+# --- Build output ---
+[Bb]in/
+[Oo]bj/
+x64/
+x86/
+[Dd]ebug/
+[Rr]elease/
+*.obj
+*.o
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.ipch
+*.iobj
+*.ipdb
+*.tlog
+*.log
+
+# --- Visual Studio ---
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+enc_temp_folder/
+
+# --- CMake ---
+/build/
+/out/
+CMakeCache.txt
+CMakeFiles/
+
+# --- CUDA ---
+*.cubin
+*.ptx
+*.fatbin
+
+# --- Agent / scratch output ---
+.claude/
+_*.txt
+_*.log
+
+# --- Data & results (live outside git, see ../Data and ../Results) ---
+/Data/
+/Results/
+*.asc
+*.z
+
+# --- OS ---
+Thumbs.db
+.DS_Store

@@ -1,0 +1,11 @@
+tsunami-core
+Copyright (c) 2026 NskTSH. All rights reserved.
+
+This product includes / depends on the following third-party components,
+used under their respective licenses (not redistributed in this repository):
+
+- OpenMP runtime — provided by the C++ compiler (MSVC), used for CPU parallelism.
+- NVIDIA CUDA Toolkit — used to build and run the GPU backend
+  (MacCormackSimulationCUDA/). Subject to the NVIDIA CUDA Toolkit EULA.
+
+No third-party source code is vendored into this repository.
