@@ -7,7 +7,7 @@ authors:
     family-names: Khorunzhenko
     affiliation: "ИАиЭ СО РАН (Institute of Automation and Electrometry SB RAS), Novosibirsk, Russia"
 repository-code: "https://github.com/NskTSH/tsunami-core"
-license: LicenseRef-NskTSH-Internal
+license: Apache-2.0
 version: "0.1.0"
 date-released: "2026-06-02"
 keywords:

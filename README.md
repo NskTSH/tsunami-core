@@ -6,7 +6,7 @@ No solver, no build — just the shared source-level contract.
 
 ## Место в экосистеме NskTSH
 Общий фундамент, который потребляют **оба** репозитория:
-- [`tsunami-simulator`](https://github.com/NskTSH/tsunami-simulator) — SWE-решатель (MacCormack + DG/FV, CPU/CUDA).
+- `tsunami-simulator` (private) — SWE-решатель (MacCormack + DG/FV, CPU/CUDA).
 - [`tsunami-ui`](https://github.com/NskTSH/tsunami-ui) — Qt-просмотрщик/запуск.
 
 Граница — **header-only исходная зависимость** (НЕ DLL).
@@ -30,4 +30,4 @@ target_link_libraries(<your_target> PRIVATE NskTSH::tsunami-io)
 Header-only = **source ABI**: изменение заголовков требует пересборки потребителей. Помечать релизы SemVer-тегами.
 
 ## Статус / видимость / лицензия
-Private, internal. © NskTSH — Internal use only, см. [LICENSE](LICENSE).
+Public. Лицензия — **Apache-2.0**, см. [LICENSE](LICENSE) и `NOTICE`.

@@ -1,6 +1,9 @@
 tsunami-core
-Copyright (c) 2026 NskTSH. All rights reserved.
+Copyright (c) 2026 NskTSH
 
 Header-only I/O foundation for the NskTSH tsunami stack. No third-party source
-code is vendored, and the library has no runtime dependencies of its own — it is
-consumed at compile time via the NskTSH::tsunami-io CMake interface target.
+code is vendored and the library has no runtime dependencies of its own.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy in the
+LICENSE file or at http://www.apache.org/licenses/LICENSE-2.0.

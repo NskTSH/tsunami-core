@@ -2,7 +2,7 @@
 
 ## Что это
 Header-only **I/O фундамент** (парсеры/форматы/параметры/координаты/источники) в `include/`.
-Решателя здесь НЕТ — он в [`tsunami-simulator`](https://github.com/NskTSH/tsunami-simulator).
+Решателя здесь НЕТ — он в `tsunami-simulator` (private repo).
 Граница с потребителями (`tsunami-simulator`, `tsunami-ui`) — header-only исходная, НЕ DLL.
 
 ## Build & Test
