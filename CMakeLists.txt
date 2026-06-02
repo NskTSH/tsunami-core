@@ -2,23 +2,25 @@ cmake_minimum_required(VERSION 3.20)
 project(tsunami_core LANGUAGES CXX)
 
 # ---------------------------------------------------------------------------
-# Header-only I/O export target.
+# tsunami-core — header-only I/O foundation for the NskTSH tsunami stack.
 #
-# This is the integration contract consumed by sibling repos (e.g. tsunami-ui),
-# which add this repo as a git submodule and link `NskTSH::tsunami-io` instead
-# of hardcoding include paths into ../MacCormackSimulation/...
+# Exposes the target `NskTSH::tsunami-io`, the shared source-level contract
+# consumed by BOTH downstream repos:
+#   - tsunami-simulator (the SWE solver / runner)
+#   - tsunami-ui        (the Qt results viewer / runner)
 #
-# Public headers (parsers / formats / coordinate system):
-#   ASCParser.h, ZDataParser.h, DefaultParametersParser.h,
-#   EllipsoidalSource.h, CoordSystem.h, IBase*.h
+# Public headers (parsers / formats / parameters / coordinate system / sources):
+#   ASCParser.h, ZDataParser.h, DefaultParametersParser.h, EllipsoidalSource.h,
+#   CoordSystem.h, ISource.h, IBaseBathymetryParser.h, IBaseParametersParser.h,
+#   IBaseParser.h   (all header-only, self-contained — no solver dependency)
 #
-# The full CPU+CUDA solver itself is built with the Visual Studio solution
-# (MacCormackSimulation.sln); this CMakeLists only exposes the I/O headers.
+# This is a header-only SOURCE dependency, not a binary (DLL) contract.
 # ---------------------------------------------------------------------------
 add_library(tsunami-io INTERFACE)
 add_library(NskTSH::tsunami-io ALIAS tsunami-io)
 
 target_include_directories(tsunami-io INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/MacCormackSimulation>)
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
 target_compile_features(tsunami-io INTERFACE cxx_std_20)

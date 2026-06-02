@@ -1,45 +1,33 @@
 # tsunami-core
 
-Shallow-water tsunami solver: MacCormack scheme with a DG/FV hybrid, on real
-bathymetry. CPU (OpenMP) **and** CUDA backends. Core simulation engine of the
-NskTSH ecosystem.
+Header-only **I/O foundation** for the NskTSH tsunami stack: bathymetry/result
+parsers, parameter file parsing, source definitions, and the coordinate system.
+No solver, no build — just the shared source-level contract.
 
 ## Место в экосистеме NskTSH
-- Потребители: **tsunami-ui** (десктоп-просмотр/запуск) подключает этот репо как git submodule
-  и линкует header-only таргет `NskTSH::tsunami-io` (парсеры/форматы).
-- Постобработка результатов: **tsunami-analysis**.
-- Данные/результаты — на диске вне git, см. конвенцию ниже.
+Общий фундамент, который потребляют **оба** репозитория:
+- [`tsunami-simulator`](https://github.com/NskTSH/tsunami-simulator) — SWE-решатель (MacCormack + DG/FV, CPU/CUDA).
+- [`tsunami-ui`](https://github.com/NskTSH/tsunami-ui) — Qt-просмотрщик/запуск.
 
-## Возможности
-- MacCormack-схема для уравнений мелкой воды (H, u, v, eta) на батиметрии.
-- Декомпозиция области: `SingleLineGridSimulation` (горизонтальные полосы, OpenMP + `std::barrier`),
-  `MultiLineGridSimulation` (2D), `PartionFileGridSimulator` (out-of-core).
-- DG/FV-гибрид (Audusse well-balanced reconstruction), TVD-стабилизатор, активные регионы.
-- CUDA-версия (`MacCormackSimulationCUDA/`) — те же ядра на GPU.
-- Парсеры входов: `ASCParser` (ESRI ASCII), `ZDataParser` (.z); источники: точечный/эллипсоидальный/…
+Граница — **header-only исходная зависимость** (НЕ DLL).
+
+## Содержимое (`include/`)
+Парсеры/форматы/параметры/координаты/источники (все header-only, самодостаточные, без зависимости от решателя):
+`ASCParser.h` (ESRI ASCII), `ZDataParser.h` (.z), `DefaultParametersParser.h`, `EllipsoidalSource.h`,
+`ISource.h`, `CoordSystem.h`, `IBaseBathymetryParser.h`, `IBaseParametersParser.h`, `IBaseParser.h`.
+
+## Использование (CMake)
+```cmake
+add_subdirectory(../tsunami-core)            # соседний репо по конвенции; либо -DTSUNAMI_CORE_DIR=<path>
+target_link_libraries(<your_target> PRIVATE NskTSH::tsunami-io)
+```
+`NskTSH::tsunami-io` — INTERFACE-таргет (C++20), добавляет `include/` в include-path. Сборки нет.
 
 ## Требования
-- C++20, Visual Studio 2022 (x64).
-- CUDA-версия: NVIDIA CUDA Toolkit.
-- Для экспортного таргета `NskTSH::tsunami-io`: CMake ≥ 3.20.
+- C++20. CMake ≥ 3.20 (для таргета).
 
-## Сборка
-- **Полный решатель (CPU + CUDA):** открыть `MacCormackSimulation.sln`, конфигурация `Release|x64`.
-- **Только I/O-таргет для потребителей:** `cmake -B build` → таргет `NskTSH::tsunami-io` (header-only).
+## Версионирование
+Header-only = **source ABI**: изменение заголовков требует пересборки потребителей. Помечать релизы SemVer-тегами.
 
-## Запуск
-```powershell
-# из корня репо; пул потоков и тихие часы — см. scripts/silent_run.ps1
-MacCormackSimulation\x64\Release\MacCormackSimulation.exe <scenario|par>
-```
-
-## Данные и результаты
-Пути берутся из `NSKTSH_DATA` / `NSKTSH_RESULTS`
-(по умолчанию `../Data` и `../Results` — папки уровнем выше репо). **Без абсолютных путей** (`F:\…`).
-Крупные бати/результаты в git **не** коммитятся.
-
-## Статус / видимость
-Private, internal. Активная разработка (DG/FV-гибрид, активные регионы).
-
-## Лицензия
-© NskTSH. Internal use only — см. [LICENSE](LICENSE).
+## Статус / видимость / лицензия
+Private, internal. © NskTSH — Internal use only, см. [LICENSE](LICENSE).

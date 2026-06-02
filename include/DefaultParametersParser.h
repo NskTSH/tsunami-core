@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include <stdexcept>
+#include <memory>
 
 #include "EllipsoidalSource.h"
 #include "IBaseParametersParser.h"

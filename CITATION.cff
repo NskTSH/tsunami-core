@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "tsunami-core: a MacCormack + DG/FV shallow-water tsunami solver (CPU & CUDA)"
+title: "tsunami-core: header-only I/O foundation for the NskTSH tsunami stack"
 type: software
 authors:
   - given-names: Arkadiy
@@ -13,16 +13,6 @@ date-released: "2026-06-02"
 keywords:
   - tsunami
   - shallow-water-equations
-  - MacCormack
-  - discontinuous-Galerkin
-  - finite-volume
-  - CUDA
-preferred-citation:
-  type: conference-paper
-  title: "Grid decomposition for tsunami simulation"
-  authors:
-    - given-names: Arkadiy
-      family-names: Khorunzhenko
-  conference:
-    name: "OCEANS 2025 (Brest)"
-  year: 2025
+  - bathymetry-io
+  - esri-ascii
+  - parameter-parser

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "ISource.h"
 #include "CoordSystem.h"

@@ -13,11 +13,8 @@ enum class CoordSystem {
     Spherical    // Сферическая система координат
 };
 
-// Направление разбивки домена на полосы (SubGrid)
-enum class DecompositionDirection {
-    Horizontal,  // Разбивка по X (горизонтальные полосы) — по умолчанию
-    Vertical     // Разбивка по Y (вертикальные полосы)
-};
+// NOTE: solver-specific enums (e.g. the domain-decomposition strategy) live in
+// tsunami-simulator, not in this I/O foundation.
 
 // Вспомогательные функции для работы с CoordSystem
 
