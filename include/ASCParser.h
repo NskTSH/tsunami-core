@@ -55,22 +55,22 @@ public:
 	    return nrows_;
     }
 
-    double GetXllCorner() const
+    double GetXllCorner() const override
     {
 	    return xllcorner_;
     }
 
-    double GetYllCorner() const
+    double GetYllCorner() const override
     {
 	    return yllcorner_;
     }
 
-    double GetCellSize() const
+    double GetCellSize() const override
     {
 	    return cellsize_;
     }
 
-    double GetNoDataValue() const
+    double GetNoDataValue() const override
     {
 	    return nodata_value_;
     }

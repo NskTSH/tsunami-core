@@ -58,6 +58,28 @@ public:
         return nrows_;
     }
 
+    // The legacy .z format carries values only and has no ESRI registration
+    // metadata. Callers that require georeferencing must use ASCParser.
+    double GetXllCorner() const override
+    {
+        throw std::logic_error("Z data has no x origin metadata");
+    }
+
+    double GetYllCorner() const override
+    {
+        throw std::logic_error("Z data has no y origin metadata");
+    }
+
+    double GetCellSize() const override
+    {
+        throw std::logic_error("Z data has no cell-size metadata");
+    }
+
+    double GetNoDataValue() const override
+    {
+        throw std::logic_error("Z data has no NODATA metadata");
+    }
+
     // (Опционально) доступ к самим данным
     const std::vector<std::vector<double>>& GetData() const
     {

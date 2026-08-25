@@ -143,7 +143,6 @@ public:
         // 6) Fifth line (coord_system) for v1.2.0+ (optional)
         // Default: Cartesian
         this->coord_system = CoordSystem::Cartesian;
-        size_t coordSystemIndex = sourcesStartIndex; // сдвигаем для проверки
         if (hasFormatVersion && this->format_version >= "1.2.0") {
             // Проверяем, есть ли строка с coord_system перед источниками
             if (lines.size() > sourcesStartIndex && 
