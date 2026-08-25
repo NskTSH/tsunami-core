@@ -10,7 +10,8 @@ project(tsunami_core LANGUAGES CXX)
 #   - tsunami-ui        (the Qt results viewer / runner)
 #
 # Public headers (parsers / formats / parameters / coordinate system / sources):
-#   ASCParser.h, ZDataParser.h, DefaultParametersParser.h, EllipsoidalSource.h,
+#   ASCParser.h, StrictEsriAsciiGrid.h, ZDataParser.h,
+#   DefaultParametersParser.h, EllipsoidalSource.h,
 #   CoordSystem.h, ISource.h, IBaseBathymetryParser.h, IBaseParametersParser.h,
 #   IBaseParser.h   (all header-only, self-contained — no solver dependency)
 #

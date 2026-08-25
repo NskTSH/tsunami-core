@@ -13,7 +13,9 @@ No solver, no build — just the shared source-level contract.
 
 ## Содержимое (`include/`)
 Парсеры/форматы/параметры/координаты/источники (все header-only, самодостаточные, без зависимости от решателя):
-`ASCParser.h` (ESRI ASCII), `ZDataParser.h` (.z), `DefaultParametersParser.h`, `EllipsoidalSource.h`,
+`ASCParser.h` (legacy ESRI ASCII), `StrictEsriAsciiGrid.h` (bounded fail-closed
+ESRI ASCII V1 with filesystem and verified stream+size entry points),
+`ZDataParser.h` (.z), `DefaultParametersParser.h`, `EllipsoidalSource.h`,
 `ISource.h`, `CoordSystem.h`, `IBaseBathymetryParser.h`, `IBaseParametersParser.h`, `IBaseParser.h`.
 
 ## Использование (CMake)
