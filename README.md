@@ -15,6 +15,8 @@ No solver, no build — just the shared source-level contract.
 Парсеры/форматы/параметры/координаты/источники (все header-only, самодостаточные, без зависимости от решателя):
 `ASCParser.h` (legacy ESRI ASCII), `StrictEsriAsciiGrid.h` (bounded fail-closed
 ESRI ASCII V1 with filesystem and verified stream+size entry points),
+`nsktsh/io/PreparedTriangleMesh.h` (bounded prepared Gmsh 2.2 ASCII V1 reader;
+CCW/manifold/rectangle boundary checks, cancellation, zero-based geometry),
 `ZDataParser.h` (.z), `DefaultParametersParser.h`, `EllipsoidalSource.h`,
 `ISource.h`, `CoordSystem.h`, `IBaseBathymetryParser.h`, `IBaseParametersParser.h`, `IBaseParser.h`.
 
