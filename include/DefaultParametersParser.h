@@ -1,5 +1,7 @@
 #pragma once
+#include <exception>
 #include <fstream>
+#include <istream>
 #include <string>
 #include <vector>
 #include <sstream>
@@ -22,6 +24,18 @@ public:
         if (!file.is_open()) {
             throw std::runtime_error("Unable to open file: " + filename);
         }
+        try {
+            Read(file);
+        }
+        catch (const std::exception& error) {
+            throw std::runtime_error("Unable to parse file '" + filename + "': " + error.what());
+        }
+    }
+
+    // Parse an already opened or verified source without reopening a narrow
+    // filename. The caller owns the stream; the grammar is shared with Read(path).
+    void Read(std::istream& file)
+    {
 
         auto trim = [](std::string s) {
             const char* ws = " \t\r\n";
@@ -31,9 +45,10 @@ public:
             return s.substr(b, e - b + 1);
         };
 
-        auto split_ws = [](const std::string& s) {
+        auto split_ws = [&file](const std::string& s) {
             std::vector<std::string> out;
             std::istringstream iss(s);
+            iss.imbue(file.getloc());
             for (std::string tok; iss >> tok;) out.push_back(tok);
             return out;
         };
@@ -46,8 +61,11 @@ public:
             if (!line.empty() && line[0] == '#') continue;
             lines.push_back(line);
         }
+        if (file.bad() || (file.fail() && !file.eof())) {
+            throw std::runtime_error("Unable to read parameters stream");
+        }
         if (lines.empty()) {
-            throw std::runtime_error("Parameters file is empty: " + filename);
+            throw std::runtime_error("Parameters input is empty");
         }
 
         // 2) Detect format: with/without format_version line
@@ -66,7 +84,7 @@ public:
         }
 
         if (lines.size() <= headerIndex + 1) {
-            throw std::runtime_error("Parameters file has too few lines: " + filename);
+            throw std::runtime_error("Parameters input has too few lines");
         }
 
         // 3) Second line (header)
@@ -164,6 +182,7 @@ public:
                 throw std::runtime_error("Not enough source lines (expected " + std::to_string(this->number_of_sources) + ")");
             }
             std::istringstream in(lines[lineIndex]);
+            in.imbue(file.getloc());
             std::string name, type;
             in >> name >> type;
             if (!in) {
